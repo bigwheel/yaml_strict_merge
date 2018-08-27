@@ -4,6 +4,6 @@ RSpec.describe YamlStrictMerge do
   end
 
   it "does something useful" do
-    expect(false).to eq(true)
+    expect(YamlStrictMerge::merge()).to eq(1)
   end
 end
