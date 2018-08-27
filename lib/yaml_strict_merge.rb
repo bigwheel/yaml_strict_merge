@@ -1,6 +1,5 @@
-require "yaml_strict_merge/version"
-
 require 'yaml'
+require 'set'
 
 module YamlStrictMerge
   class YamlMergeError < StandardError; end
