@@ -22,7 +22,7 @@ module YamlStrictMerge
         pairs = lhs.keys.concat(rhs.keys).to_set.map { |key|
           [key, merge(lhs[key], rhs[key])]
         }
-        return Hash[*pairs.flatten]
+        return Hash[*pairs.flatten(1)]
       when Array
         raise YamlMergeError unless lhs.size == rhs.size
         return lhs.zip(rhs).map { |lv, rv|
