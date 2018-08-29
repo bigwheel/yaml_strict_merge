@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require 'yaml_strict_merge'
+
+yaml = <<~EOS
+---
+EOS
+
+ARGV.each do |filename|
+  s = File.open(filename) { |f| f.read }
+  yaml = YamlStrictMerge::merge_yaml(yaml, s)
+end
+
+puts yaml
