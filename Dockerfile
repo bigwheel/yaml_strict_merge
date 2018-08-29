@@ -1,4 +1,8 @@
-FROM ruby:2.5
+FROM ruby:2.5-alpine
+
+RUN set -ex \
+      && apk --update add git \
+      && rm -rf /var/cache/apk/*
 
 RUN set -ex \
       && gem install specific_install \
